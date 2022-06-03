@@ -15,6 +15,7 @@
 /**
  * Adds a random greeting to the page.
  */
+/** 
 function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
@@ -25,4 +26,25 @@ function addRandomGreeting() {
   // Add it to the page.
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
+}
+*/
+function addRandomQuote() {
+    const quotes =
+    ['Look at them: A minute ago they were babies, and now they’re driving, and soon we’ll all be dead.' 
+    ,'The minute they got rid of rotary phones everything went to hell.'
+    ,'When life gives you lemonade, make lemons. Life will be all like, ‘What?!'
+    ,'I might be coach, but I like to travel first class!'
+    ,'Success is one per cent inspiration, 98 per cent perspiration, and two per cent attention to detail.'
+    ,'No one wants to think at graduation! It’s graduation, the time when we celebrate being done with thinking.'
+    ,'Books? Wake up and smell the Internet, grandma.'];
+
+    //Pick a random quote
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+
+    //Add it to the page
+    const quoteContainer = document.getElementById('quote-container');
+    quoteContainer.innerText = quote;
+
+    console.log(quote);
+
 }
