@@ -7,3 +7,24 @@
 #greeting-container {
   margin-top: 20px;
 }
+
+#min_pic {
+    width: 200px;
+    height: 250px;
+}
+
+.image-thumbnails {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;  
+}
+  
+.image-thumbnails img {
+    margin: 10px;
+    max-height: 200px;
+    max-width: 200px;
+}
+  
+.image-thumbnails img:hover {
+    border: thick solid black;
+}
