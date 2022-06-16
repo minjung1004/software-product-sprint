@@ -20,6 +20,13 @@
   </properties>
 
   <dependencies>
+    <!--Gson-->
+    <dependency>
+        <groupId>com.google.code.gson</groupId>
+        <artifactId>gson</artifactId>
+        <version>2.9.0</version>
+    </dependency>
+
     <!-- Java Servlets API -->
     <dependency>
       <groupId>javax.servlet</groupId>

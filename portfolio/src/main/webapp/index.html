@@ -74,6 +74,27 @@
       <button type='button' onclick="addRandomQuote()">Quote</button>
       <div id="quote-container"></div>
 
+      <p>Click here to see my favorite TV shows:</p>
+      <button onclick="getShow()">Favorite TV Shows!</button>
+      <ul id="show-container"></ul>
+      <p>Click <a href="/show">here</a> to see content created by server code.</p>
+      
+      <p>Click here to see Hello World Page</p>
+      <button onclick="getHelloWorld()">Hello</button>
+      <ul id="hello-container"></ul>
+      <p>Click <a href="/hello">here</a> to see content created by server</p>
+
+      <!--when clicked page is refreshed for now-->
+      <form action="/form-handler" method="POST" >
+        <p>Contact Me:</p>
+        <div id="info-container">
+            <textarea id="info-box" name="name-input" placeholder="Name"></textarea>
+            <textarea id="info-box" name="email-input" placeholder="Email"></textarea>
+        </div>
+        <textarea id="text-box" name="text-input" placeholder="Feel free to contact me or give me feed back on my website!"></textarea>
+        <br/>
+        <input type="submit" />
+      </form>
      
     </div>
   </body>
