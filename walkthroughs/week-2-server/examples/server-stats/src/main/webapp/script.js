@@ -20,6 +20,7 @@ async function getServerStats() {
   const stats = await responseFromServer.json();
 
   const statsListElement = document.getElementById('server-stats-container');
+  
   statsListElement.innerHTML = '';
 
   statsListElement.appendChild(

@@ -32,3 +32,28 @@ function addRandomQuote() {
     console.log(quote);
 
 }
+
+/** Fetches the hello world and adds it to the page. */
+async function getHelloWorld() {
+    const responseFromServer = await fetch('/hello');
+    const textFromResponse = await responseFromServer.text();
+  
+    const helloContainer = document.getElementById('hello-container');
+    helloContainer.innerText = textFromResponse;
+
+  }
+
+async function getShow(){
+     // Get the list of shows from the server
+     const responseFromServer = await fetch('/show');
+     const shows = await responseFromServer.json();
+
+     // Pick a random show
+     const show = shows[Math.floor(Math.random() * shows.length)];
+   
+     // Add it to the page
+     const showContainer = document.getElementById('show-container');
+     showContainer.innerHTML = show;
+ 
+     console.log(show);
+}
