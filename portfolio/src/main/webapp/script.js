@@ -44,14 +44,14 @@ async function getHelloWorld() {
   }
 
 async function getShow(){
-     // Send a request to /hello.
+     // Get the list of shows from the server
      const responseFromServer = await fetch('/show');
      const shows = await responseFromServer.json();
 
-     //Pick a random show
+     // Pick a random show
      const show = shows[Math.floor(Math.random() * shows.length)];
    
-     //Add it to the page
+     // Add it to the page
      const showContainer = document.getElementById('show-container');
      showContainer.innerHTML = show;
  

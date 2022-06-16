@@ -1,14 +1,14 @@
 package com.google.sps.servlets;
 
+import com.google.gson.Gson;
 import java.io.IOException;
 import java.util.ArrayList;
-import com.google.gson.Gson;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/** Handles requests sent to the /hello URL. Try running a server and navigating to /hello! */
+/** Handles requests sent to the /show URL. Try running a server and navigating to /show! */
 @WebServlet("/show")
 public class FavShowServlet extends HttpServlet {
 
@@ -19,7 +19,6 @@ public class FavShowServlet extends HttpServlet {
       show.add("Modern Family");
       show.add("Umbrella Academy");
       show.add("Criminal Mind");
-      //response.getWriter().println(show);
 
       String json = convertToJson(show);
 
@@ -31,6 +30,5 @@ public class FavShowServlet extends HttpServlet {
       Gson gson = new Gson();
       String json = gson.toJson(show);
       return json;
-
   }
 }

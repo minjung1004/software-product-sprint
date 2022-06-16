@@ -20,6 +20,13 @@
   </properties>
 
   <dependencies>
+    <!--Google Clouod Datastore-->
+    <dependency>
+        <groupId>com.google.cloud</groupId>
+        <artifactId>google-cloud-datastore</artifactId>
+        <version>1.104.0</version>
+    </dependency>
+    
     <!--Gson-->
     <dependency>
         <groupId>com.google.code.gson</groupId>
