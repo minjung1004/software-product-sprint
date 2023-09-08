@@ -57,3 +57,46 @@ async function getShow(){
  
      console.log(show);
 }
+
+/** Fetches tasks from the server and adds them to the DOM. */
+function loadContacts() {
+      fetch('/contact-list').then(response => response.json()).then((contacts) => {
+          const contactListElement = document.getElementById('contact-list');
+          contacts.forEach((contact) => {
+              contactListElement.appendChild(createContactElement(contact));
+            })
+        });
+}
+
+/** Creates an element that represents a task, including its delete button. */
+function createContactElement(contact) {
+    const contactElement = document.createElement('li');
+    contactElement.className = 'contact';
+  
+   // const nameElement = document.createElement('span');
+    //nameElement.innerText = contact.name;
+
+    const messageElement = document.createElement('span');
+    messageElement.innerText = contact.message;
+  
+    const deleteButtonElement = document.createElement('button');
+    deleteButtonElement.innerText = 'Delete';
+    deleteButtonElement.addEventListener('click', () => {
+      deleteContact(contact);
+  
+      // Remove the task from the DOM.
+      contactElement.remove();
+    });
+    
+    contactElement.appendChild(messageElement);
+    contactElement.appendChild(deleteButtonElement);
+    return contactElement;
+  }
+
+  /** Tells the server to delete the task. */
+function deleteContact(contact) {
+    const params = new URLSearchParams();
+    params.append('id', contact.id);
+    fetch('/delete-contact', {method: 'POST', body: params});
+  }
+  
